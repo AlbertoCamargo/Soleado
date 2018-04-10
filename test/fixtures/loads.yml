@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  rated_power: 9.99
+  daily_hours: 1.5
+  owner_id: 1
+
+two:
+  name: MyString
+  type: 
+  rated_power: 9.99
+  daily_hours: 1.5
+  owner_id: 1

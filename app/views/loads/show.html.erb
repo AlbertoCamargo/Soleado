@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @load.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @load.type_of_load %>
+</p>
+
+<p>
+  <strong>Rated power:</strong>
+  <%= @load.rated_power %>
+</p>
+
+<p>
+  <strong>Daily hours:</strong>
+  <%= @load.daily_hours %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @load.owner_id %>
+</p>
+
+<%= link_to 'Edit', edit_load_path(@load) %> |
+<%= link_to 'Back', loads_path %>

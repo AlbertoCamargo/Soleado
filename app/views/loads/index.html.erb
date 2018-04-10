@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Loads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Rated power (Watts)</th>
+      <th>Daily hours</th>
+      <th>Owner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loads.each do |load| %>
+      <tr>
+        <td><%= load.name %></td>
+        <td><%= Load::LOAD_OPTIONS.map{|a| a[0] if a[1].include? load.type_of_load}.compact[0] %></td>
+        <td><%= load.rated_power %></td>
+        <td><%= load.daily_hours %></td>
+        <td><%= load.user_id %></td>
+        <td><%= link_to 'Show', load %></td>
+        <td><%= link_to 'Edit', edit_load_path(load) %></td>
+        <td><%= link_to 'Destroy', load, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Load', new_load_path %>

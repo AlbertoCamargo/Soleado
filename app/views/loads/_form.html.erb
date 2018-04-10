@@ -1,0 +1,37 @@
+<%= form_for(@load) do |f| %>
+  <% if @load.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@load.errors.count, "error") %> prohibited this load from being saved:</h2>
+
+      <ul>
+      <% @load.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :type_of_load %><br>
+    <%= f.select :type_of_load, Load::LOAD_OPTIONS %>
+  </div>
+  <div class="field">
+    <%= f.label :rated_power %><br>
+    <%= f.text_field :rated_power %>
+  </div>
+  <div class="field">
+    <%= f.label :daily_hours %><br>
+    <%= f.text_field :daily_hours %>
+  </div>
+  <div class="field">
+    <%= f.label :owner_id %><br>
+    <%= f.number_field :owner_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
